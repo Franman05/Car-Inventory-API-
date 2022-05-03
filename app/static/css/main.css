@@ -1,6 +1,7 @@
 /* NavBar Styling */
 .navbar-brand {
-    font-size: 50px;
+    font-size: 20px;
+    display: flex;
 }
 
 .navbar-nav {
@@ -11,12 +12,12 @@
 /* Start of Hero/Header Section */
 #header-text{
     padding: 2vw;
+    text-align: center;
 }
 
 #header-image {
     width: 80%;
-    max-width: 100%;
-    padding-top: 2vw;
+    max-width: 80%;
 }
 /* End of Hero/Header Section */
 
@@ -65,20 +66,5 @@
 #footer{
     border-top: 3px solid black;
     margin-top: 20vh;
-}
-
-/* Profile Styles */
-.hero-section{
-    height: 95vh;
-    position: relative;
-}
-
-.header-text{
-    display:flex;
-    justify-content: center;
-    padding-top: 20%;
-    left: 20rem;
-    top: 10rem;
-    color: white;
 }
 
