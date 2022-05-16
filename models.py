@@ -51,21 +51,19 @@ class Car(db.Model):
     id = db.Column(db.String, primary_key = True)
     make = db.Column(db.String(150))
     model = db.Column(db.String(200), nullable = True)
-    sale_price = db.Column(db.Numeric(precision=10, scale = 2))
+    sale_price = db.Column(db.String)
     color = db.Column(db.String(150))
-    year = db.Column(db.Numeric(precision=4))
-    mpg = db.Column(db.String(100))
+    year = db.Column(db.String)
     new_used = db.Column(db.String(20))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, make, model, sale_price, color, year, mpg, new_used, user_token, id = ''):
+    def __init__(self, make, model, sale_price, color, year, new_used, user_token, id = ''):
         self.id = self.set_id()
         self.make = make
         self.model = model
         self.sale_price = sale_price
         self.color = color
         self.year = year
-        self.mpg = mpg
         self.new_used = new_used
         self.user_token = user_token
 
@@ -76,7 +74,7 @@ class Car(db.Model):
         return secrets.token_urlsafe()
 
 class CarSchema(ma.Schema):
-    fields = ['id', 'make', 'model', 'sale_price', 'color', 'year', 'mpg', 'new_used']
+    fields = ['id', 'make', 'model', 'sale_price', 'color', 'year', 'new_used']
 
 car_schema = CarSchema()
 cars_schema = CarSchema(many = True)
