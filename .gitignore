@@ -1,3 +1,4 @@
-app.db
+car_api_env
 __pycache__
+migrations
 .env
