@@ -41,7 +41,8 @@ def get_car(current_user_token, id):
     car = Car.query.get(id)
     response = car_schema.dump(car)
     return jsonify(response)
-
+    
+# Update endpoint
 @api.route('/cars/<id>', methods = ['POST', 'PUT'])
 @token_required
 def update_car(current_user_token, id):

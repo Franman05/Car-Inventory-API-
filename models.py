@@ -51,9 +51,9 @@ class Car(db.Model):
     id = db.Column(db.String, primary_key = True)
     make = db.Column(db.String(150))
     model = db.Column(db.String(200), nullable = True)
-    sale_price = db.Column(db.String)
+    sale_price = db.Column(db.Integer)
     color = db.Column(db.String(150))
-    year = db.Column(db.String)
+    year = db.Column(db.Integer)
     new_used = db.Column(db.String(20))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
